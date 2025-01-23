@@ -113,6 +113,32 @@
         .btn:hover {
             background: #0056b3;
         }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+        }
+
+        .delete-btn:hover {
+            background: #c82333;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -141,24 +167,39 @@
 
         <ul class="task-list">
             <li class="task-item priority-high">
-                <span class="task-title">Complete Project Presentation</span>
-                <span class="task-date">Due: Jan 25, 2025</span>
+                <div>
+                    <span class="task-title">Complete Project Presentation</span>
+                    <span class="task-date">Due: Jan 25, 2025</span>
+                </div>
+                <button class="delete-btn">Delete</button>
             </li>
             <li class="task-item priority-medium">
-                <span class="task-title">Review Team Reports</span>
-                <span class="task-date">Due: Jan 26, 2025</span>
+                <div>
+                    <span class="task-title">Review Team Reports</span>
+                    <span class="task-date">Due: Jan 26, 2025</span>
+                </div>
+                <button class="delete-btn">Delete</button>
             </li>
             <li class="task-item priority-low">
-                <span class="task-title">Update Documentation</span>
-                <span class="task-date">Due: Jan 27, 2025</span>
+                <div>
+                    <span class="task-title">Update Documentation</span>
+                    <span class="task-date">Due: Jan 27, 2025</span>
+                </div>
+                <button class="delete-btn">Delete</button>
             </li>
             <li class="task-item priority-medium">
-                <span class="task-title">Prepare Weekly Summary</span>
-                <span class="task-date">Due: Jan 28, 2025</span>
+                <div>
+                    <span class="task-title">Prepare Weekly Summary</span>
+                    <span class="task-date">Due: Jan 28, 2025</span>
+                </div>
+                <button class="delete-btn">Delete</button>
             </li>
             <li class="task-item priority-high">
-                <span class="task-title">Client Meeting Preparation</span>
-                <span class="task-date">Due: Jan 29, 2025</span>
+                <div>
+                    <span class="task-title">Client Meeting Preparation</span>
+                    <span class="task-date">Due: Jan 29, 2025</span>
+                </div>
+                <button class="delete-btn">Delete</button>
             </li>
         </ul>
     </div>
@@ -195,6 +236,19 @@
             
             // Reset form
             this.reset();
+        });
+    </script>
+
+    <script>
+        // Add click event listeners to all delete buttons
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const taskItem = this.parentElement;
+                taskItem.style.animation = 'fadeOut 0.3s';
+                setTimeout(() => {
+                    taskItem.remove();
+                }, 300);
+            });
         });
     </script>
 </body>
