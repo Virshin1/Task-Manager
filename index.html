@@ -139,6 +139,32 @@
                 transform: translateX(-20px);
             }
         }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+        }
+
+        .delete-btn:hover {
+            background: #c82333;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -236,6 +262,19 @@
             
             // Reset form
             this.reset();
+        });
+    </script>
+
+    <script>
+        // Add click event listeners to all delete buttons
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const taskItem = this.parentElement;
+                taskItem.style.animation = 'fadeOut 0.3s';
+                setTimeout(() => {
+                    taskItem.remove();
+                }, 300);
+            });
         });
     </script>
 
