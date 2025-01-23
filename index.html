@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .task-item:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+
+        .task-title {
+            font-size: 1.1em;
+            color: #495057;
+        }
+
+        .task-date {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .priority-high {
+            border-left: 4px solid #dc3545;
+        }
+
+        .priority-medium {
+            border-left: 4px solid #ffc107;
+        }
+
+        .priority-low {
+            border-left: 4px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+        <ul class="task-list">
+            <li class="task-item priority-high">
+                <span class="task-title">Complete Project Presentation</span>
+                <span class="task-date">Due: Jan 25, 2025</span>
+            </li>
+            <li class="task-item priority-medium">
+                <span class="task-title">Review Team Reports</span>
+                <span class="task-date">Due: Jan 26, 2025</span>
+            </li>
+            <li class="task-item priority-low">
+                <span class="task-title">Update Documentation</span>
+                <span class="task-date">Due: Jan 27, 2025</span>
+            </li>
+            <li class="task-item priority-medium">
+                <span class="task-title">Prepare Weekly Summary</span>
+                <span class="task-date">Due: Jan 28, 2025</span>
+            </li>
+            <li class="task-item priority-high">
+                <span class="task-title">Client Meeting Preparation</span>
+                <span class="task-date">Due: Jan 29, 2025</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
